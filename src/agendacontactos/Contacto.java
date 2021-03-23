@@ -1,7 +1,7 @@
 package agendacontactos;
 
 /**
- * Clase base para los contactos que se guardar谩n en una agenda telef贸nica
+ * Clase base para los contactos que se guardar醤 en una agenda telef髇ica
  * @author Carlos Herrero
  * @version 1.0
  *
@@ -15,22 +15,22 @@ public class Contacto {
 	
 	//patromes para validar expresiones regulares
 	
-	final String PATRON_NOMBRE="[A-Z][\\w\\s\\-&]{1,49}";
-	final String PATRON_APE="[A-Z][\\w\\s\\-&]{1,99}";
-	final String PATRON_TELE="([679]\\d{8})|(\\+\\d[\\d\\-]{19})";
+	final String PATRON_NOMBRE="^[A-Z][\\w\\s\\-&]{1,49}$";
+	final String PATRON_APE="^[A-Z][\\w\\s\\-&]{1,99}$";
+	final String PATRON_TELE="^([679]\\d{8})|(\\+\\d[\\d\\-]{19})$";
 	
 	//constructor
 	public Contacto (String nom, String ape,  String tele){
 		if (!nom.matches(PATRON_NOMBRE)) {
-			throw new IllegalArgumentException("El nombre no cumple el patr贸n esperado");
+			throw new IllegalArgumentException("El nombre no cumple el patr髇 esperado");
 		}
 		
 		if (!ape.matches(PATRON_APE)) {
-			throw new IllegalArgumentException("El apellido no cumple el patr贸n esperado");
+			throw new IllegalArgumentException("El apellido no cumple el patr髇 esperado");
 		}
 		
 		if (!tele.matches(PATRON_TELE)) {
-			throw new IllegalArgumentException("El tel茅fono no cumple el patr贸n esperado");
+			throw new IllegalArgumentException("El tel閒ono no cumple el patr髇 esperado");
 		}
 		
 		this.nombre = nom;
